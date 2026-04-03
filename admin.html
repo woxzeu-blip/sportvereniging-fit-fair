@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beheer - Sportvereniging Fit & Fair</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Beheer - Sportvereniging Fit & Fair</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#activities">Activiteiten Beheren</a></li>
+                    <li><a href="#registrations">Aanmeldingen</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="activities" class="admin-section">
+            <div class="container">
+                <h2>Activiteiten Beheren</h2>
+                
+                <div class="admin-actions">
+                    <button class="btn" onclick="showAddActivityForm()">Nieuwe Activiteit Toevoegen</button>
+                    <button class="btn btn-secondary" onclick="loadActivities()">Vernieuwen</button>
+                </div>
+
+                <div id="activities-list" class="admin-list">
+                    <p>Activiteiten laden...</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="registrations" class="admin-section">
+            <div class="container">
+                <h2>Aanmeldingen per Activiteit</h2>
+                <div id="registrations-overview">
+                    <p>Selecteer een activiteit om aanmeldingen te bekijken.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Sportvereniging Fit & Fair</p>
+        </div>
+    </footer>
+
+    <!-- Add Activity Modal -->
+    <div id="add-activity-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Nieuwe Activiteit Toevoegen</h2>
+            <form id="add-activity-form">
+                <div class="form-group">
+                    <label for="title">Titel:</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Beschrijving:</label>
+                    <textarea id="description" name="description" rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="date">Datum:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Tijd:</label>
+                    <input type="time" id="time" name="time">
+                </div>
+                <div class="form-group">
+                    <label for="location">Locatie:</label>
+                    <input type="text" id="location" name="location">
+                </div>
+                <div class="form-group">
+                    <label for="max_participants">Maximaal deelnemers:</label>
+                    <input type="number" id="max_participants" name="max_participants" min="1">
+                </div>
+                <div class="form-group">
+                    <label for="type">Type:</label>
+                    <select id="type" name="type" required>
+                        <option value="">Kies type...</option>
+                        <option value="training">Training</option>
+                        <option value="toernooi">Toernooi</option>
+                        <option value="open dag">Open Dag</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Activiteit Toevoegen</button>
+            </form>
+            <div id="add-activity-message"></div>
+        </div>
+    </div>
+
+    <!-- Registrations Modal -->
+    <div id="registrations-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Aanmeldingen</h2>
+            <div id="registrations-list"></div>
+        </div>
+    </div>
+
+    <script src="/js/admin.js"></script>
+</body>
+</html>
