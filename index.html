@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportvereniging Fit & Fair</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Sportvereniging Fit & Fair</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#activities">Activiteiten</a></li>
+                    <li><a href="/admin">Beheer</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h2>Welkom bij Sportvereniging Fit & Fair</h2>
+                <p>Uw sportieve gemeenschap voor trainingen, toernooien en gezellige activiteiten</p>
+            </div>
+        </section>
+
+        <section id="activities" class="activities">
+            <div class="container">
+                <h2>Activiteiten</h2>
+                <div id="activities-list" class="activities-grid">
+                    <p>Activiteiten laden...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Sportvereniging Fit & Fair</p>
+            <p>Contact: mevrouw M. de Groot (secretaris)</p>
+        </div>
+    </footer>
+
+    <div id="activity-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="activity-details"></div>
+        </div>
+    </div>
+
+    <div id="registration-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Aanmelden voor activiteit</h2>
+            <form id="registration-form">
+                <input type="hidden" id="activity-id">
+                <div class="form-group">
+                    <label for="name">Naam:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Telefoon (optioneel):</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <button type="submit">Aanmelden</button>
+            </form>
+            <div id="registration-message"></div>
+        </div>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
